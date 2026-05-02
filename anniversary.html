@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our 3rd Anniversary</title>
+    <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --soft-rose: #fff0f3;
+            --deep-red: #c9184a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-rose);
+            color: #444;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* Animated Floating Hearts */
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--primary-pink);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        header { padding: 60px 20px 20px; }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--deep-red);
+            margin-bottom: 10px;
+            animation: fadeIn 2s;
+        }
+
+        .counter-container { margin: 20px auto 40px; font-weight: bold; color: var(--deep-red); }
+
+        #counter {
+            font-size: 1.2rem;
+            background: white;
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 2px dashed var(--primary-pink);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        #counter span { color: var(--primary-pink); font-size: 1.4rem; }
+
+        .message {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo-card:hover { transform: scale(1.05) rotate(1deg); z-index: 10; }
+
+        /* Improved image handling to prevent broken layouts */
+        .photo-card img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+            border-radius: 5px;
+            background-color: #eee; /* Shows a grey box if image is missing */
+        }
+
+        .caption {
+            margin-top: 15px;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            font-size: 1.6rem;
+            color: var(--deep-red);
+        }
+
+        #musicToggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 25px;
+            background-color: var(--deep-red);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        #musicToggle:hover { background-color: var(--primary-pink); transform: scale(1.1); }
+
+        footer { padding: 80px 20px; font-size: 2.2rem; color: var(--deep-red); font-family: 'Brush Script MT', cursive; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div class="heart-bg" id="heartContainer"></div>
+
+    <header>
+        <h1>Happy 3rd Anniversary!</h1>
+        <div class="counter-container">
+            <p>Our journey together:</p>
+            <div id="counter">
+                <span id="years">0</span> years, <span id="months">0</span> months, <span id="days">0</span> days, 
+                <span id="hours">0</span>h, <span id="minutes">0</span>m, <span id="seconds">0</span>s
+            </div>
+        </div>
+        <div class="message">
+            <p>Three years ago today, we started something beautiful. Every laugh and every adventure together has meant the world to me. Thank you for three incredible years bae!</p>
+        </div>
+    </header>
+
+   <div class="gallery">
+        <div class="photo-card"><img src="img1.jpeg"><div class="caption">Sending love</div></div>
+        <div class="photo-card"><img src="img2.jpeg"><div class="caption">The best dates</div></div>
+        <div class="photo-card"><img src="img3.jpeg"><div class="caption">Outdoors with you</div></div>
+        <div class="photo-card"><img src="img4.jpeg"><div class="caption">Cuddles</div></div>
+        <div class="photo-card"><img src="img5.jpeg"><div class="caption">Being silly</div></div>
+        <div class="photo-card"><img src="img8.jpeg"><div class="caption">Our walks</div></div>
+        <div class="photo-card"><img src="img9.jpeg"><div class="caption">Memories</div></div>
+        <div class="photo-card"><img src="img10.jpeg"><div class="caption">Happiness</div></div>
+        <div class="photo-card"><img src="img11.jpeg"><div class="caption">Beautiful </div></div>
+        <div class="photo-card"><img src="img6.jpeg"><div class="caption">3 years together</div></div>
+        <div class="photo-card"><img src="img12.jpeg"><div class="caption">Sweet dreams</div></div>
+        <div class="photo-card"><img src="img13.jpeg"><div class="caption">Pure love</div></div>
+        <div class="photo-card"><img src="img14.jpeg"><div class="caption">Our 3rd Year</div></div> </div>
+
+    <footer>I love you more every single day. ❤️</footer>
+
+    <audio id="anniversaryMusic" loop>
+        <source src="whitney.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span> Play Our Song
+    </button>
+
+    <script>
+        // Start date: May 2nd, 2023
+        const startDate = new Date(2023, 4, 2); 
+
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            document.getElementById('years').innerText = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            document.getElementById('months').innerText = Math.floor((diff / (1000 * 60 * 60 * 24 * 30.44)) % 12);
+            document.getElementById('days').innerText = Math.floor((diff / (1000 * 60 * 60 * 24)) % 30.44);
+            document.getElementById('hours').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            document.getElementById('minutes').innerText = Math.floor((diff / 1000 / 60) % 60);
+            document.getElementById('seconds').innerText = Math.floor((diff / 1000) % 60);
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        function createHeart() {
+            const container = document.getElementById('heartContainer');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 400);
+
+        const music = document.getElementById('anniversaryMusic');
+        const musicBtn = document.getElementById('musicToggle');
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                musicBtn.innerHTML = '<span>⏸️</span> Pause Music';
+            } else {
+                music.pause();
+                musicBtn.innerHTML = '<span>🎵</span> Play Our Song';
+            }
+        }
+    </script>
+</body>
+</html>
